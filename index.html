@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UPSC Mains Answer Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== AUTH SCREEN ===================== -->
+  <main id="auth-screen" class="auth-screen">
+    <div class="auth-card">
+      <p class="auth-eyebrow">Mains Answer Tracker</p>
+      <h1 class="auth-title">Keep the count.<br>Clear the syllabus.</h1>
+
+      <form id="auth-form" class="auth-form">
+        <label class="field">
+          <span>Email</span>
+          <input type="email" id="email" autocomplete="email" required />
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input type="password" id="password" autocomplete="current-password" required minlength="6" />
+        </label>
+
+        <p id="auth-error" class="auth-error" hidden></p>
+
+        <button type="submit" id="auth-submit" class="btn btn-primary btn-block">Sign in</button>
+      </form>
+
+      <p class="auth-toggle">
+        <span id="auth-toggle-text">New here?</span>
+        <button type="button" id="auth-toggle-btn" class="link-btn">Create an account</button>
+      </p>
+    </div>
+  </main>
+
+  <!-- ===================== DASHBOARD ===================== -->
+  <div id="dashboard" class="dashboard" hidden>
+
+    <header class="topbar">
+      <div class="topbar-brand">
+        <p class="brand-eyebrow">UPSC Mains</p>
+        <h2 class="brand-title">Answer Tracker</h2>
+      </div>
+      <div class="topbar-user">
+        <span id="user-email" class="user-email"></span>
+        <button id="signout-btn" class="btn btn-ghost">Sign out</button>
+      </div>
+    </header>
+
+    <section class="total-section">
+      <p class="total-label">Total Answers</p>
+      <p id="total-count" class="total-count">0</p>
+      <p id="sync-status" class="sync-status">Synced</p>
+    </section>
+
+    <section class="grid" id="subject-grid" aria-label="Subject counters">
+      <!-- cards injected by app.js -->
+    </section>
+
+    <footer class="footer">
+      <button id="reset-btn" class="btn btn-danger-outline">Reset Progress</button>
+    </footer>
+  </div>
+
+  <!-- ===================== RESET CONFIRM MODAL ===================== -->
+  <div id="modal-overlay" class="modal-overlay" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h3 id="modal-title">Reset all progress?</h3>
+      <p>This sets every subject back to zero. This can't be undone.</p>
+      <div class="modal-actions">
+        <button id="modal-cancel" class="btn btn-ghost">Cancel</button>
+        <button id="modal-confirm" class="btn btn-danger">Reset everything</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
