@@ -3,22 +3,22 @@
 // ============================================================
 
 const SUBJECTS = [
-  "Ancient History",
-  "Medieval History",
-  "Modern History",
-  "Art & Culture",
-  "Geography",
-  "Polity",
-  "Science & Technology",
-  "Environment",
-  "Economy",
-  "International Relations (IR)",
-  "Social Justice",
-  "Ethics",
-  "Essay",
-  "World History",
-  "Governance",
-  "Disaster Management"
+  { id: "ancient_history", name: "Ancient History" },
+  { id: "medieval_history", name: "Medieval History" },
+  { id: "modern_history", name: "Modern History" },
+  { id: "art_culture", name: "Art & Culture" },
+  { id: "geography", name: "Geography" },
+  { id: "polity", name: "Polity" },
+  { id: "science_tech", name: "Science & Technology" },
+  { id: "environment", name: "Environment" },
+  { id: "economy", name: "Economy" },
+  { id: "ir", name: "International Relations (IR)" },
+  { id: "social_justice", name: "Social Justice" },
+  { id: "ethics", name: "Ethics" },
+  { id: "essay", name: "Essay" },
+  { id: "world_history", name: "World History" },
+  { id: "governance", name: "Governance" },
+  { id: "disaster_management", name: "Disaster Management" },
 ];
 
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
